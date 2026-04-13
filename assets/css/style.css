@@ -105,11 +105,6 @@ p {
   letter-spacing: 0.01em;
 }
 
-.brand-logo img {
-  border-radius: 0.25rem;
-  object-fit: cover;
-}
-
 .nav-link {
   color: var(--color-text-light);
   font-weight: 500;
