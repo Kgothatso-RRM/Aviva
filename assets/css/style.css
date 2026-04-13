@@ -1,0 +1,312 @@
+/*
+  Emberton Estate Website Shell Styles
+  ------------------------------------
+  This stylesheet defines:
+  - Brand variables
+  - Global resets and typography
+  - Shared navbar/footer component styles
+  - Utility helpers for spacing/layout
+*/
+
+:root {
+  /* Brand palette (Emberton-led) */
+  --color-primary: #2c3e2d;
+  --color-secondary: #f5f0e8;
+  --color-accent: #c4a882;
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-bg-subtle: #f9f6f1;
+
+  /* Supporting tokens */
+  --color-border: #e6dfd4;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Segoe UI', Roboto, sans-serif;
+
+  --transition-base: 0.3s ease;
+}
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Global smooth scroll requirement */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-secondary);
+  line-height: 1.6;
+  padding-top: 88px; /* Offset for fixed shared navbar */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Shared component wrappers */
+.site-navbar {
+  transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.site-navbar .navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Homepage starts transparent and gains solid background on scroll */
+.navbar-home-top {
+  background-color: transparent;
+}
+
+/* Inner pages or scrolled state */
+.navbar-solid {
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-logo {
+  font-family: var(--font-heading);
+  color: var(--color-text-light);
+  font-size: 1.35rem;
+  letter-spacing: 0.01em;
+}
+
+.brand-logo img {
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.nav-link {
+  color: var(--color-text-light);
+  font-weight: 500;
+  transition: opacity var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-text-light);
+  opacity: 0.85;
+}
+
+.nav-link.active {
+  color: var(--color-accent) !important;
+}
+
+.site-visit-btn {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: 1px solid transparent;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.6rem 1rem;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.site-visit-btn:hover,
+.site-visit-btn:focus {
+  color: var(--color-primary);
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.navbar-toggler {
+  border: 0;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+.main-shell {
+  min-height: calc(100vh - 88px - 280px);
+}
+
+.home-hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+  background-color: var(--color-primary);
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 33, 20, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 5rem;
+}
+
+.hero-content h1 {
+  color: var(--color-text-light);
+}
+
+.hero-kicker {
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.home-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-gallery-grid img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+}
+
+.site-footer h5,
+.site-footer h6 {
+  color: var(--color-text-light);
+}
+
+.footer-links a {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  opacity: 0.95;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  opacity: 0.8;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social a {
+  font-size: 1.1rem;
+}
+
+.footer-disclaimer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Utility classes */
+.bg-subtle {
+  background-color: var(--color-bg-subtle);
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.rounded-soft {
+  border-radius: var(--radius-md);
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 80px;
+  }
+
+  .site-navbar .navbar-collapse {
+    background-color: var(--color-primary);
+    margin-top: 0.75rem;
+    border-radius: var(--radius-md);
+    padding: 1rem;
+  }
+
+  .site-visit-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .main-shell {
+    min-height: calc(100vh - 80px - 310px);
+  }
+
+  .home-hero {
+    min-height: 60vh;
+  }
+
+  .hero-content {
+    padding-bottom: 3rem;
+  }
+
+  .home-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575.98px) {
+  .home-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
