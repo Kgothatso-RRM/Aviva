@@ -30,10 +30,7 @@
       <header class="site-navbar fixed-top" id="siteNavbar">
         <nav class="navbar navbar-expand-lg" aria-label="Primary">
           <div class="container">
-            <a class="brand-logo d-inline-flex align-items-center gap-2" href="index.html" aria-label="Emberton Estate home">
-              <img src="assets/images/shared/logo.svg" alt="Emberton Estate logo" width="36" height="36">
-              <span>Emberton Estate</span>
-            </a>
+            <a class="brand-logo" href="index.html">Emberton Estate</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,10 +54,7 @@
         <div class="container">
           <div class="row g-4">
             <div class="col-lg-4">
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <img src="assets/images/shared/logo.svg" alt="Emberton Estate logo" width="32" height="32">
-                <h5 class="mb-0">Emberton Estate</h5>
-              </div>
+              <h5 class="mb-2">Emberton Estate</h5>
               <p class="mb-0">Established, lived-in, community-first estate living in Hillcrest.</p>
             </div>
             <div class="col-sm-6 col-lg-2">
