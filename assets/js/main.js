@@ -30,7 +30,9 @@
       <header class="site-navbar fixed-top" id="siteNavbar">
         <nav class="navbar navbar-expand-lg" aria-label="Primary">
           <div class="container">
-            <a class="brand-logo" href="index.html">Emberton Estate</a>
+            <a class="brand-logo d-inline-flex align-items-center gap-2" href="index.html" aria-label="Emberton Estate home">
+              <img src="assets/images/shared/logo.png" alt="Emberton Estate logo" width="36" height="36">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,7 +56,10 @@
         <div class="container">
           <div class="row g-4">
             <div class="col-lg-4">
-              <h5 class="mb-2">Emberton Estate</h5>
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <img src="assets/images/shared/logo.png" alt="Emberton Estate logo" width="32" height="32">
+                <h5 class="mb-0">Emberton Estate</h5>
+              </div>
               <p class="mb-0">Established, lived-in, community-first estate living in Hillcrest.</p>
             </div>
             <div class="col-sm-6 col-lg-2">
@@ -149,10 +154,66 @@
     if (footerMount) footerMount.innerHTML = buildFooter();
   }
 
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll('[data-animate], .image-reveal, .feature-row');
+    if (!revealElements.length || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    revealElements.forEach((el, idx) => {
+      if (el.classList.contains('feature-row')) {
+        el.style.transitionDelay = `${Math.min(idx * 60, 420)}ms`;
+      }
+      observer.observe(el);
+    });
+  }
+
+  function initHeroParallax() {
+    const heroImage = document.querySelector('.hero-bg-image');
+    if (!heroImage) return;
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        const offset = window.scrollY * 0.18;
+        heroImage.style.transform = `translateY(${offset}px) scale(1.04)`;
+      },
+      { passive: true }
+    );
+  }
+
+  function initScrollProgress() {
+    const progressBar = document.getElementById('scrollProgress');
+    if (!progressBar) return;
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initSharedLayout();
     setNavbarBehavior();
     enableSmoothAnchorScroll();
     setupMobileMenuClose();
+    initScrollReveal();
+    initHeroParallax();
+    initScrollProgress();
   });
 })();

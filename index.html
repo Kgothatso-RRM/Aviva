@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Emberton Estate in Hillcrest, KwaZulu-Natal.">
     <title>Emberton Estate | Home</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/shared/favicon.ico">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +19,120 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body data-page="home">
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <!-- Shared navbar mount -->
     <div id="site-navbar-mount"></div>
 
     <main class="main-shell" id="main-content">
-      <!-- Homepage sections will be added in later prompts -->
+      <!-- HERO: estate-first positioning -->
+      <header class="home-hero position-relative">
+        <img src="assets/images/home/hero-estate-entrance.jpg" alt="Emberton Estate entrance" class="hero-bg-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-noise" aria-hidden="true"></div>
+        <section class="container hero-content text-white">
+          <div class="row justify-content-end">
+            <article class="col-lg-6 col-xl-5">
+              <p class="hero-kicker mb-2 hero-subtitle">Emberton Estate</p>
+              <h1 class="display-5 mb-3 hero-heading">Effortless living at Emberton Estate</h1>
+              <p class="lead mb-4 hero-subtitle-delay">View available homes and apartments</p>
+              <a class="hero-cta-btn hero-cta-enter" href="#" aria-label="Book a site visit">Book a site visit</a>
+            </article>
+          </div>
+        </section>
+        <div class="hero-scroll-indicator" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </header>
+
+      <!-- Main intro copy -->
+      <section class="bg-subtle intro-split-section">
+        <div class="container-fluid px-0">
+          <div class="row g-0 align-items-stretch">
+            <article class="col-lg-6 intro-split-copy" data-animate>
+              <h2>Established within the Hillcrest Community</h2>
+              <p>
+                Emberton Estate is a charming lifestyle estate within Hillcrest, located just off the N3 with convenient access to schools, shops and daily necessities. This is where you can truly find your home, among a friendly and vibrant community in our established estate.
+              </p>
+              <p>
+                Emberton offers homes and apartment-style living, for all generations, arranged in village-style blocks, surrounding a large green oval with plenty of facilities for the kids, and a welcoming clubhouse and restaurant, Ray’s Kitchen at the centre.
+              </p>
+              <p class="mb-0">
+                Feel the country-fresh air and let it invigorate every sense, bringing new possibilities in an established, lifestyle-rich estate that is part of the fabric of Hillcrest’s thriving community.
+              </p>
+            </article>
+            <aside class="col-lg-6 intro-split-image-wrap" data-animate>
+              <img src="assets/images/home/hero-drone-aerial.jpg" alt="Drone aerial image of Emberton Estate" class="intro-split-image image-reveal">
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Invest / Why live here -->
+      <section class="section-padding">
+        <div class="container">
+          <div class="row g-5 align-items-center luxury-why-wrap">
+            <div class="col-lg-6" data-animate>
+              <article class="why-visual-card">
+                <img src="assets/images/home/gallery-kids-play.jpg" alt="Kids playing in garden" class="why-image rounded-soft shadow-soft image-reveal">
+                <div class="why-visual-overlay">
+                  <p class="mb-0">Lived-in, family-first estate life in motion.</p>
+                </div>
+              </article>
+            </div>
+            <article class="col-lg-6" data-animate>
+              <h2 class="mb-4">Why living here feeds your soul?</h2>
+              <ul class="why-feature-list">
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Established estate</span></li>
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Connected community</span></li>
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Family lifestyle</span></li>
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Kids’ facilities</span></li>
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Restaurant on site (Ray’s Kitchen)</span></li>
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Central Hillcrest location</span></li>
+                <li class="feature-row"><span class="feature-icon">✦</span><span>Proximity to schools and N3 access</span></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Location map and copy -->
+      <section class="section-padding bg-subtle" data-animate>
+        <div class="container">
+          <div class="row g-5 align-items-stretch map-layout">
+            <div class="col-lg-6">
+              <img src="assets/images/home/location-map.jpg" alt="Map showing Emberton location in Hillcrest" class="rounded-soft shadow-soft image-reveal">
+            </div>
+            <article class="col-lg-6 map-copy">
+              <h2>The Ultimate Hillcrest Scene</h2>
+              <p class="map-copy-paragraph">
+                Where you live matters, location is everything! Jump into the Hillcrest scene, where the stunning scenery meets your on-the-go lifestyle. Where the neighbourhood buzz meets nature’s tranquillity, and every colour of your life gets its chance to shine. From sweeping hillside views to green-as-can-be landscapes, and from daily essentials to modern luxuries, convenience is always within reach.
+              </p>
+              <p class="map-copy-paragraph">
+                Positioned in the heart of a well-established and family-focused node, Emberton is surrounded by some of the area’s most sought-after schools, including Kearsney College, St Mary’s, and the popular Winston Park schooling network, together supporting a thriving community of over 10 000 students nearby.
+              </p>
+              <p class="mb-0 map-copy-paragraph">
+                Beyond education, the lifestyle offering is equally compelling, with weekends spent at Fig Tree Farm, mornings at the Shongweni Farmers Market, and relaxed afternoons on the Winston Park golf course. It’s a location that naturally balances family living, convenience and everyday enjoyment.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Updated gallery -->
+      <section class="section-padding">
+        <div class="container">
+          <h2 class="mb-4" data-animate>Gallery</h2>
+          <div class="home-gallery-grid">
+            <img src="assets/images/home/gallery-estate-entrance.jpg" alt="Estate entrance gallery image" class="rounded-soft image-reveal">
+            <img src="assets/images/home/gallery-rays-kitchen.jpg" alt="Restaurant social scene at Ray's Kitchen" class="rounded-soft image-reveal">
+            <img src="assets/images/home/gallery-pool.jpg" alt="Residents enjoying the pool" class="rounded-soft image-reveal">
+            <img src="assets/images/home/gallery-walking-trails.jpg" alt="Walking trails in Emberton Estate" class="rounded-soft image-reveal">
+            <img src="assets/images/home/gallery-kids-play.jpg" alt="Families and kids in shared spaces" class="rounded-soft image-reveal">
+            <img src="assets/images/home/gallery-drone-aerial.jpg" alt="Aerial view of Emberton Estate" class="rounded-soft image-reveal">
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Shared footer mount -->
